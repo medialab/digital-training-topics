@@ -1,0 +1,187 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Digital Trainings</title>
+  <meta name="description" content="Digital Trainings">
+  <meta name="author" content="médialab">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body onclick="run">
+  <h1></h1>
+  <script>
+var data = {
+  generators:[
+    {
+      pattern:"$1: $2 ou $3 ?"
+      ,$1: {
+          dictionary: "idea"
+          ,form: "le"
+        }
+      ,$2: {
+          dictionary: "qualification"
+          ,form: "base"
+        }
+      ,$3: {
+          dictionary: "qualification"
+          ,form: "base"
+        }
+    },{
+      pattern:"$1: $2, $3 ?"
+      ,$1: {
+          dictionary: "idea"
+          ,form: "le"
+        }
+      ,$2: {
+          dictionary: "qualification"
+          ,form: "quel"
+        }
+      ,$3: {
+          dictionary: "qualification"
+          ,form: "quel"
+        }
+    },{
+      pattern:"$1 $2"
+      ,$1: {
+          dictionary: "idea"
+          ,form: "du"
+        }
+      ,$2: {
+          dictionary: "idea"
+          ,form: "au"
+        }
+    }
+  ]
+  ,idea:[
+    {
+      base: "digitalisation de l'entreprise"
+      ,le: "la $"
+      ,du: "de la $"
+      ,au: "à la $"
+      ,quel: "quelle $"
+    },{
+      base: "diversité"
+      ,le: "la $"
+      ,du: "de la $"
+      ,au: "à la $"
+      ,quel: "quelle $" 
+    },{
+      base: "collaboratif"
+      ,le: "le $"
+      ,du: "du $"
+      ,au: "au $"
+      ,quel: "quel $"
+    },{
+      base: "digital"
+      ,le: "le $"
+      ,du: "du $"
+      ,au: "au $"
+      ,quel: "quel $"
+    }
+  ],
+  qualification:[
+    {
+       base: "signification"
+      ,le: "la $"
+      ,du: "de la $"
+      ,au: "à la $"
+      ,quel: "quelle $"
+    },{
+      base: "propositions"
+      ,le: "les $"
+      ,du: "des $"
+      ,au: "aux $"
+      ,quel: "quelles $"
+    },{
+     base: "contrainte"
+      ,le: "la $"
+      ,du: "de la $"
+      ,au: "à la $"
+      ,quel: "quelles $s"
+    },{
+      base: "levier de croissance"
+      ,le: "le $"
+      ,du: "du $"
+      ,au: "au $"
+      ,quel: "quel $"
+    },{
+      base: "buzzword"
+      ,le: "le $"
+      ,du: "du $"
+      ,au: "au $"
+      ,quel: "quel $"
+    },{
+      base: "mode"
+      ,le: "la $"
+      ,du: "de la $"
+      ,au: "à la $"
+      ,quel: "quelle $"
+    },{
+      base: "nécessité"
+      ,le: "la $"
+      ,du: "de la $"
+      ,au: "à la $"
+      ,quel: "quelle $"
+    },{
+      base: "image de marque"
+      ,le: "la $"
+      ,du: "de la $"
+      ,au: "à la $"
+      ,quel: "quelle $"
+    },{
+      base: "tendance"
+      ,le: "la $"
+      ,du: "de la $"
+      ,au: "à la $"
+      ,quel: "quelle $"
+    },{
+      base: "marque employeur"
+      ,le: "la $"
+      ,du: "de la $"
+      ,au: "à la $"
+      ,quel: "quelle $"
+    }
+  ]
+}
+function run(){
+  var generator = data.generators[ Math.floor( Math.random()*data.generators.length ) ]
+    ,result = generator.pattern
+    ,already = []
+  generator.pattern.match(/\$[0-9]/gi).forEach(function(placeholder){
+    var dico = data[ generator[placeholder].dictionary ]
+    ,template_id = Math.random()*dico.length
+
+    while( already.indexOf(template_id)>=0 ) {
+      template_id = Math.random()*dico.length
+    }
+    already.push(template_id)
+
+    var template = dico[ Math.floor( template_id ) ]
+    ,form = generator[placeholder].form || 'base'
+    ,expr 
+    // console.log('dico', dico, dico.length)
+    // console.log('template', template)
+    if ( form == 'base' ) {
+      expr = template['base']
+    } else {
+      expr = template[form].replace('$', template['base'])
+    }
+
+    result = result.replace(placeholder, expr)
+  })
+
+  result = result.substr(0,1).toUpperCase() + result.substr(1,result.length)
+
+  document.querySelectorAll('h1')[0].textContent = result
+  console.log(result)
+}
+run()
+  </script>
+</body>
+</html>
