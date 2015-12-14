@@ -13,13 +13,27 @@
   <![endif]-->
 </head>
 
-<body onclick="run">
+<body>
   <h1></h1>
   <script>
 var data = {
   generators:[
     {
       pattern:"$1: $2 ou $3 ?"
+      ,$1: {
+          dictionary: "idea"
+          ,form: "le"
+        }
+      ,$2: {
+          dictionary: "qualification"
+          ,form: "base"
+        }
+      ,$3: {
+          dictionary: "qualification"
+          ,form: "base"
+        }
+    },{
+      pattern:"$1: $2 et $3."
       ,$1: {
           dictionary: "idea"
           ,form: "le"
@@ -56,6 +70,12 @@ var data = {
           dictionary: "idea"
           ,form: "au"
         }
+    },{
+      pattern:"Penser demain pour agir aujourd'hui: planifier $1"
+      ,$1: {
+          dictionary: "idea"
+          ,form: "le"
+        }
     }
   ]
   ,idea:[
@@ -83,6 +103,12 @@ var data = {
       ,du: "du $"
       ,au: "au $"
       ,quel: "quel $"
+    },{
+      base: "design thinking"
+      ,le: "le $"
+      ,du: "du $"
+      ,au: "au $"
+      ,quel: "quel design management"
     }
   ],
   qualification:[
@@ -92,6 +118,18 @@ var data = {
       ,du: "de la $"
       ,au: "à la $"
       ,quel: "quelle $"
+    },{
+      base: "nouveaux usages"
+      ,le: "les $"
+      ,du: "des $"
+      ,au: "aux $"
+      ,quel: "quels $"
+    },{
+      base: "interactions"
+      ,le: "les $"
+      ,du: "des $"
+      ,au: "aux $"
+      ,quel: "quelles $"
     },{
       base: "propositions"
       ,le: "les $"
@@ -147,6 +185,20 @@ var data = {
       ,au: "à la $"
       ,quel: "quelle $"
     }
+  ],
+  suffix:[
+    {
+       base: "à l'ère du digital"
+    }
+  ],
+  isdigital:[
+    {
+      base: "santé digitale"
+      ,le: "la $"
+      ,du: "de la $"
+      ,au: "à la $"
+      ,quel: "quelle $"
+    }
   ]
 }
 function run(){
@@ -164,9 +216,7 @@ function run(){
 
     var template = dico[ Math.floor( template_id ) ]
     ,form = generator[placeholder].form || 'base'
-    ,expr 
-    // console.log('dico', dico, dico.length)
-    // console.log('template', template)
+    ,expr
     if ( form == 'base' ) {
       expr = template['base']
     } else {
