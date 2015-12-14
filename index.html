@@ -152,7 +152,7 @@ var data = {
   ]
   ,action:[
     {
-      base: "former"
+      base: "changer de paradigme"
     },{
       base: "transformer"
     },{
@@ -160,7 +160,7 @@ var data = {
     },{
       base: "stimuler la créativité"
     },{
-      base: "manager l'innovation'"
+      base: "manager l'innovation"
     }
   ]
   ,idea:[
@@ -184,17 +184,17 @@ var data = {
       base: "silver économie"
       ,un: "une $"
       ,son: "sa $"
-      ,le: "l'$"
-      ,du: "de l'$"
-      ,au: "à l'$"
+      ,le: "la $"
+      ,du: "de la $"
+      ,au: "à la $"
       ,quel: "quelle $"
     },{
       base: "performance collective"
       ,un: "une $"
       ,son: "sa $"
-      ,le: "l'$"
-      ,du: "de l'$"
-      ,au: "à l'$"
+      ,le: "la $"
+      ,du: "de la $"
+      ,au: "à la $"
       ,quel: "quelle $"
     },{
       base: "diversité"
@@ -381,7 +381,7 @@ var data = {
     {
        base: "à l'ère du digital"
     },{
-       base: "aujourd'hui"
+       base: "aujourd'hui et demain"
     }
   ],
   isdigital:[
@@ -404,20 +404,28 @@ var data = {
     }
   ]
 }
+
+run()
+
 function run(){
-  var generator = data.generators[ Math.floor( Math.random()*data.generators.length ) ]
+  var d = getRandomCopy()
+  
+  for( var i = 0 ; i < 10 ; i++ ){
+    console.log(generate(d))
+  }  
+
+  // document.querySelectorAll('h1')[0].textContent = result
+  
+}
+
+function generate(data) {
+  var generator = data.generators.pop()
     ,result = generator.pattern
     ,already = []
   generator.pattern.match(/\$[0-9]/gi).forEach(function(placeholder){
     var dico = data[ generator[placeholder].dictionary ]
-    ,template_id = Math.random()*dico.length
 
-    while( already.indexOf(template_id)>=0 ) {
-      template_id = Math.random()*dico.length
-    }
-    already.push(template_id)
-
-    var template = dico[ Math.floor( template_id ) ]
+    var template = dico.pop()
     ,form = generator[placeholder].form || 'base'
     ,expr
     if ( form == 'base' ) {
@@ -431,10 +439,36 @@ function run(){
 
   result = result.substr(0,1).toUpperCase() + result.substr(1,result.length)
 
-  document.querySelectorAll('h1')[0].textContent = result
-  console.log(result)
+  return result
 }
-run()
+
+function getRandomCopy() {
+  // Generate random copy
+  var randomCopy = {}
+  for ( var k in data ){
+    randomCopy[k] = shuffle( data[k].slice(0) )
+  }
+  return randomCopy
+}
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex ;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
   </script>
 </body>
 </html>
