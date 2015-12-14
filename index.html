@@ -19,6 +19,20 @@
 var data = {
   generators:[
     {
+      pattern:"$1 et $2 $3"
+      ,$1: {
+          dictionary: "idea"
+          ,form: "base"
+        }
+      ,$2: {
+          dictionary: "idea"
+          ,form: "base"
+        }
+      ,$3: {
+          dictionary: "suffix"
+          ,form: "base"
+        }
+    },{
       pattern:"$1 : concevoir $2"
       ,$1: {
           dictionary: "idea"
@@ -27,6 +41,26 @@ var data = {
       ,$2: {
           dictionary: "qualification"
           ,form: "un"
+        }
+    },{
+      pattern:"$1 décryptée par $2"
+      ,$1: {
+          dictionary: "idea"
+          ,form: "base"
+        }
+      ,$2: {
+          dictionary: "idea"
+          ,form: "le"
+        }
+    },{
+      pattern:"$1 : concevoir et mettre en oeuvre $2"
+      ,$1: {
+          dictionary: "idea"
+          ,form: "base"
+        }
+      ,$2: {
+          dictionary: "qualification"
+          ,form: "son"
         }
     },{
       pattern:"$1 : $2 ou $3 ?"
@@ -92,13 +126,23 @@ var data = {
     {
       base: "digitalisation de l'entreprise"
       ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
       ,quel: "quelle $"
     },{
+      base: "innovation digitale"
+      ,un: "une $"
+      ,son: "sa $"
+      ,le: "l'$"
+      ,du: "de l'$"
+      ,au: "à l'$"
+      ,quel: "quelle $"
+    },{
       base: "diversité"
       ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
@@ -106,6 +150,7 @@ var data = {
     },{
       base: "transition numérique"
       ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
@@ -113,6 +158,7 @@ var data = {
     },{
       base: "stratégie de communication"
       ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
@@ -120,13 +166,23 @@ var data = {
     },{
       base: "stratégie d'entreprise"
       ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
       ,quel: "quelle $" 
     },{
+      base: "système de marque"
+      ,un: "un $"
+      ,son: "son $"
+      ,le: "le $"
+      ,du: "du $"
+      ,au: "au $"
+      ,quel: "quel $"
+    },{
       base: "collaboratif"
       ,un: "un $"
+      ,son: "son $"
       ,le: "le $"
       ,du: "du $"
       ,au: "au $"
@@ -134,13 +190,31 @@ var data = {
     },{
       base: "digital"
       ,un: "un $"
+      ,son: "son $"
       ,le: "le $"
       ,du: "du $"
       ,au: "au $"
       ,quel: "quel $"
     },{
+      base: "humanités digitales"
+      ,un: "des $"
+      ,son: "ses $"
+      ,le: "les $"
+      ,du: "des $"
+      ,au: "aux $"
+      ,quel: "quelles $"
+    },{
+      base: "sciences sociales"
+      ,un: "des $"
+      ,son: "ses $"
+      ,le: "les $"
+      ,du: "des $"
+      ,au: "aux $"
+      ,quel: "quelles $"
+    },{
       base: "design thinking"
       ,un: "un $"
+      ,son: "son $"
       ,le: "le $"
       ,du: "du $"
       ,au: "au $"
@@ -151,6 +225,7 @@ var data = {
     {
        base: "signification"
       ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
@@ -158,6 +233,7 @@ var data = {
     },{
       base: "nouveaux usages"
       ,un: "des $"
+      ,son: "ses $"
       ,le: "les $"
       ,du: "des $"
       ,au: "aux $"
@@ -165,6 +241,7 @@ var data = {
     },{
       base: "interactions"
       ,un: "des $"
+      ,son: "ses $"
       ,le: "les $"
       ,du: "des $"
       ,au: "aux $"
@@ -172,6 +249,7 @@ var data = {
     },{
       base: "propositions"
       ,un: "des $"
+      ,son: "ses $"
       ,le: "les $"
       ,du: "des $"
       ,au: "aux $"
@@ -179,6 +257,7 @@ var data = {
     },{
       base: "contrainte"
       ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
@@ -186,6 +265,7 @@ var data = {
     },{
       base: "levier de croissance"
       ,un: "un $"
+      ,son: "son $"
       ,le: "le $"
       ,du: "du $"
       ,au: "au $"
@@ -193,6 +273,7 @@ var data = {
     },{
       base: "buzzword"
       ,un: "un $"
+      ,son: "son $"
       ,le: "le $"
       ,du: "du $"
       ,au: "au $"
@@ -200,6 +281,7 @@ var data = {
     },{
       base: "mode"
       ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
@@ -207,6 +289,7 @@ var data = {
     },{
       base: "nécessité"
       ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
@@ -214,6 +297,7 @@ var data = {
     },{
       base: "image de marque"
       ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
@@ -221,6 +305,7 @@ var data = {
     },{
       base: "tendance"
       ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
@@ -228,6 +313,7 @@ var data = {
     },{
       base: "marque employeur"
       ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
@@ -245,6 +331,7 @@ var data = {
     {
       base: "santé digitale"
       ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
@@ -252,6 +339,7 @@ var data = {
     },{
       base: "road mapping digital"
       ,un: "un $"
+      ,son: "son $"
       ,le: "le $"
       ,du: "du $"
       ,au: "au $"
