@@ -11,15 +11,105 @@
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+
+  <style type="text/css" media="all">
+@import url(http://fonts.googleapis.com/css?family=Inconsolata|Open+Sans:300,400,600|Open+Sans+Condensed:300,700);
+body {
+  padding: 36px;
+  font-family: "Inconsolata";
+  margin: 1em 0 0 0;
+  font-size: 160%;
+  font-weight: 600;
+  color: rgb(42,42,42);
+  line-height: 1.8em;
+}
+h1{
+  color: #bd001d;
+  border-bottom: 3px solid #bd001d;
+}
+  </style>
 </head>
 
 <body>
-  <h1></h1>
+  <h1>Brainstorming formations 2016:</h1>
+  <ul id="list"></ul>
   <script>
 var data = {
   generators:[
     {
-      pattern:"$1: $2 ou $3 ?"
+      pattern:"leadership et $1"
+      ,$1: {
+          dictionary: "idea"
+          ,form: "base"
+        }
+    },{
+      pattern:"les défis $1"
+      ,$1: {
+          dictionary: "idea"
+          ,form: "du"
+        }
+    },{
+      pattern:"$1 dans un monde complexe et en pleine mutation"
+      ,$1: {
+          dictionary: "action"
+          ,form: "base"
+        }
+    },{
+      pattern:"$1 pour $2"
+      ,$1: {
+          dictionary: "action"
+          ,form: "base"
+        }
+      ,$2: {
+          dictionary: "action"
+          ,form: "base"
+        }
+    },{
+      pattern:"$1 et $2 $3"
+      ,$1: {
+          dictionary: "idea"
+          ,form: "base"
+        }
+      ,$2: {
+          dictionary: "idea"
+          ,form: "base"
+        }
+      ,$3: {
+          dictionary: "suffix"
+          ,form: "base"
+        }
+    },{
+      pattern:"$1 : concevoir $2"
+      ,$1: {
+          dictionary: "idea"
+          ,form: "base"
+        }
+      ,$2: {
+          dictionary: "qualification"
+          ,form: "un"
+        }
+    },{
+      pattern:"decrypter $1 par $2"
+      ,$1: {
+          dictionary: "idea"
+          ,form: "le"
+        }
+      ,$2: {
+          dictionary: "idea"
+          ,form: "le"
+        }
+    },{
+      pattern:"$1 : concevoir et mettre en oeuvre $2"
+      ,$1: {
+          dictionary: "idea"
+          ,form: "base"
+        }
+      ,$2: {
+          dictionary: "qualification"
+          ,form: "son"
+        }
+    },{
+      pattern:"$1 : $2 ou $3 ?"
       ,$1: {
           dictionary: "idea"
           ,form: "le"
@@ -33,7 +123,7 @@ var data = {
           ,form: "base"
         }
     },{
-      pattern:"$1: $2 et $3."
+      pattern:"$1 : $2 et $3."
       ,$1: {
           dictionary: "idea"
           ,form: "le"
@@ -47,7 +137,7 @@ var data = {
           ,form: "base"
         }
     },{
-      pattern:"$1: $2, $3 ?"
+      pattern:"$1 : $2, $3 ?"
       ,$1: {
           dictionary: "idea"
           ,form: "le"
@@ -71,40 +161,135 @@ var data = {
           ,form: "au"
         }
     },{
-      pattern:"Penser demain pour agir aujourd'hui: planifier $1"
+      pattern:"Penser demain pour agir aujourd'hui : planifier $1"
       ,$1: {
           dictionary: "idea"
           ,form: "le"
         }
     }
   ]
+  ,action:[
+    {
+      base: "changer de paradigme"
+    },{
+      base: "transformer"
+    },{
+      base: "diriger"
+    },{
+      base: "stimuler la créativité"
+    },{
+      base: "manager l'innovation"
+    }
+  ]
   ,idea:[
     {
       base: "digitalisation de l'entreprise"
+      ,un: "une $"
+      ,son: "sa $"
+      ,le: "la $"
+      ,du: "de la $"
+      ,au: "à la $"
+      ,quel: "quelle $"
+    },{
+      base: "innovation digitale"
+      ,un: "une $"
+      ,son: "sa $"
+      ,le: "l'$"
+      ,du: "de l'$"
+      ,au: "à l'$"
+      ,quel: "quelle $"
+    },{
+      base: "silver économie"
+      ,un: "une $"
+      ,son: "sa $"
+      ,le: "la $"
+      ,du: "de la $"
+      ,au: "à la $"
+      ,quel: "quelle $"
+    },{
+      base: "performance collective"
+      ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
       ,quel: "quelle $"
     },{
       base: "diversité"
+      ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
       ,quel: "quelle $" 
     },{
+      base: "transition numérique"
+      ,un: "une $"
+      ,son: "sa $"
+      ,le: "la $"
+      ,du: "de la $"
+      ,au: "à la $"
+      ,quel: "quelle $" 
+    },{
+      base: "stratégie de communication"
+      ,un: "une $"
+      ,son: "sa $"
+      ,le: "la $"
+      ,du: "de la $"
+      ,au: "à la $"
+      ,quel: "quelle $" 
+    },{
+      base: "stratégie d'entreprise"
+      ,un: "une $"
+      ,son: "sa $"
+      ,le: "la $"
+      ,du: "de la $"
+      ,au: "à la $"
+      ,quel: "quelle $" 
+    },{
+      base: "système de marque"
+      ,un: "un $"
+      ,son: "son $"
+      ,le: "le $"
+      ,du: "du $"
+      ,au: "au $"
+      ,quel: "quel $"
+    },{
       base: "collaboratif"
+      ,un: "un $"
+      ,son: "son $"
       ,le: "le $"
       ,du: "du $"
       ,au: "au $"
       ,quel: "quel $"
     },{
       base: "digital"
+      ,un: "un $"
+      ,son: "son $"
       ,le: "le $"
       ,du: "du $"
       ,au: "au $"
       ,quel: "quel $"
     },{
+      base: "humanités digitales"
+      ,un: "des $"
+      ,son: "ses $"
+      ,le: "les $"
+      ,du: "des $"
+      ,au: "aux $"
+      ,quel: "quelles $"
+    },{
+      base: "sciences sociales"
+      ,un: "des $"
+      ,son: "ses $"
+      ,le: "les $"
+      ,du: "des $"
+      ,au: "aux $"
+      ,quel: "quelles $"
+    },{
       base: "design thinking"
+      ,un: "un $"
+      ,son: "son $"
       ,le: "le $"
       ,du: "du $"
       ,au: "au $"
@@ -114,72 +299,96 @@ var data = {
   qualification:[
     {
        base: "signification"
+      ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
       ,quel: "quelle $"
     },{
       base: "nouveaux usages"
+      ,un: "des $"
+      ,son: "ses $"
       ,le: "les $"
       ,du: "des $"
       ,au: "aux $"
       ,quel: "quels $"
     },{
       base: "interactions"
+      ,un: "des $"
+      ,son: "ses $"
       ,le: "les $"
       ,du: "des $"
       ,au: "aux $"
       ,quel: "quelles $"
     },{
       base: "propositions"
+      ,un: "des $"
+      ,son: "ses $"
       ,le: "les $"
       ,du: "des $"
       ,au: "aux $"
       ,quel: "quelles $"
     },{
-     base: "contrainte"
+      base: "contrainte"
+      ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
       ,quel: "quelles $s"
     },{
       base: "levier de croissance"
+      ,un: "un $"
+      ,son: "son $"
       ,le: "le $"
       ,du: "du $"
       ,au: "au $"
       ,quel: "quel $"
     },{
       base: "buzzword"
+      ,un: "un $"
+      ,son: "son $"
       ,le: "le $"
       ,du: "du $"
       ,au: "au $"
       ,quel: "quel $"
     },{
       base: "mode"
+      ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
       ,quel: "quelle $"
     },{
       base: "nécessité"
+      ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
       ,quel: "quelle $"
     },{
       base: "image de marque"
+      ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
       ,quel: "quelle $"
     },{
       base: "tendance"
+      ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
       ,quel: "quelle $"
     },{
       base: "marque employeur"
+      ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
@@ -189,32 +398,54 @@ var data = {
   suffix:[
     {
        base: "à l'ère du digital"
+    },{
+       base: "aujourd'hui et demain"
     }
   ],
   isdigital:[
     {
       base: "santé digitale"
+      ,un: "une $"
+      ,son: "sa $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
       ,quel: "quelle $"
+    },{
+      base: "road mapping digital"
+      ,un: "un $"
+      ,son: "son $"
+      ,le: "le $"
+      ,du: "du $"
+      ,au: "au $"
+      ,quel: "quel $"
     }
   ]
 }
+
+run()
+
 function run(){
-  var generator = data.generators[ Math.floor( Math.random()*data.generators.length ) ]
+  var d = getRandomCopy()
+  
+  for( var i = 0 ; i < 10 ; i++ ){
+    var txt = generate(d)
+    document.querySelector('#list').innerHTML += "<li>" + txt + "</li>"
+    console.log(txt)
+  }  
+
+  // document.querySelectorAll('h1')[0].textContent = result
+  
+}
+
+function generate(data) {
+  var generator = data.generators.pop()
     ,result = generator.pattern
     ,already = []
   generator.pattern.match(/\$[0-9]/gi).forEach(function(placeholder){
     var dico = data[ generator[placeholder].dictionary ]
-    ,template_id = Math.random()*dico.length
 
-    while( already.indexOf(template_id)>=0 ) {
-      template_id = Math.random()*dico.length
-    }
-    already.push(template_id)
-
-    var template = dico[ Math.floor( template_id ) ]
+    var template = dico.pop()
     ,form = generator[placeholder].form || 'base'
     ,expr
     if ( form == 'base' ) {
@@ -228,10 +459,36 @@ function run(){
 
   result = result.substr(0,1).toUpperCase() + result.substr(1,result.length)
 
-  document.querySelectorAll('h1')[0].textContent = result
-  console.log(result)
+  return result
 }
-run()
+
+function getRandomCopy() {
+  // Generate random copy
+  var randomCopy = {}
+  for ( var k in data ){
+    randomCopy[k] = shuffle( data[k].slice(0) )
+  }
+  return randomCopy
+}
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex ;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
   </script>
 </body>
 </html>
