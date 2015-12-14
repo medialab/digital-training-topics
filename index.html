@@ -11,10 +11,24 @@
   <!--[if lt IE 9]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+
+  <style type="text/css" media="all">
+@import url(http://fonts.googleapis.com/css?family=Inconsolata|Open+Sans:300,400,600|Open+Sans+Condensed:300,700);
+body {
+  padding: 36px;
+  font-family: "Inconsolata";
+  margin: 1em 0 0 0;
+  font-size: 160%;
+  font-weight: 600;
+  color: rgb(42,42,42);
+  line-height: 1.8em;
+}
+  </style>
 </head>
 
 <body>
-  <h1></h1>
+  <h1>Brainstorming formations 2016:</h1>
+  <ul id="list"></ul>
   <script>
 var data = {
   generators:[
@@ -411,7 +425,9 @@ function run(){
   var d = getRandomCopy()
   
   for( var i = 0 ; i < 10 ; i++ ){
-    console.log(generate(d))
+    var txt = generate(d)
+    document.querySelector('#list').innerHTML += "<li>" + txt + "</li>"
+    console.log(txt)
   }  
 
   // document.querySelectorAll('h1')[0].textContent = result
