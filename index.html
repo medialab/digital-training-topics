@@ -19,6 +19,16 @@
 var data = {
   generators:[
     {
+      pattern:"$1 : concevoir $2"
+      ,$1: {
+          dictionary: "idea"
+          ,form: "base"
+        }
+      ,$2: {
+          dictionary: "qualification"
+          ,form: "un"
+        }
+    },{
       pattern:"$1 : $2 ou $3 ?"
       ,$1: {
           dictionary: "idea"
@@ -81,30 +91,56 @@ var data = {
   ,idea:[
     {
       base: "digitalisation de l'entreprise"
+      ,un: "une $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
       ,quel: "quelle $"
     },{
       base: "diversité"
+      ,un: "une $"
+      ,le: "la $"
+      ,du: "de la $"
+      ,au: "à la $"
+      ,quel: "quelle $" 
+    },{
+      base: "transition numérique"
+      ,un: "une $"
+      ,le: "la $"
+      ,du: "de la $"
+      ,au: "à la $"
+      ,quel: "quelle $" 
+    },{
+      base: "stratégie de communication"
+      ,un: "une $"
+      ,le: "la $"
+      ,du: "de la $"
+      ,au: "à la $"
+      ,quel: "quelle $" 
+    },{
+      base: "stratégie d'entreprise"
+      ,un: "une $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
       ,quel: "quelle $" 
     },{
       base: "collaboratif"
+      ,un: "un $"
       ,le: "le $"
       ,du: "du $"
       ,au: "au $"
       ,quel: "quel $"
     },{
       base: "digital"
+      ,un: "un $"
       ,le: "le $"
       ,du: "du $"
       ,au: "au $"
       ,quel: "quel $"
     },{
       base: "design thinking"
+      ,un: "un $"
       ,le: "le $"
       ,du: "du $"
       ,au: "au $"
@@ -114,72 +150,84 @@ var data = {
   qualification:[
     {
        base: "signification"
+      ,un: "une $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
       ,quel: "quelle $"
     },{
       base: "nouveaux usages"
+      ,un: "des $"
       ,le: "les $"
       ,du: "des $"
       ,au: "aux $"
       ,quel: "quels $"
     },{
       base: "interactions"
+      ,un: "des $"
       ,le: "les $"
       ,du: "des $"
       ,au: "aux $"
       ,quel: "quelles $"
     },{
       base: "propositions"
+      ,un: "des $"
       ,le: "les $"
       ,du: "des $"
       ,au: "aux $"
       ,quel: "quelles $"
     },{
-     base: "contrainte"
+      base: "contrainte"
+      ,un: "une $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
       ,quel: "quelles $s"
     },{
       base: "levier de croissance"
+      ,un: "un $"
       ,le: "le $"
       ,du: "du $"
       ,au: "au $"
       ,quel: "quel $"
     },{
       base: "buzzword"
+      ,un: "un $"
       ,le: "le $"
       ,du: "du $"
       ,au: "au $"
       ,quel: "quel $"
     },{
       base: "mode"
+      ,un: "une $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
       ,quel: "quelle $"
     },{
       base: "nécessité"
+      ,un: "une $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
       ,quel: "quelle $"
     },{
       base: "image de marque"
+      ,un: "une $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
       ,quel: "quelle $"
     },{
       base: "tendance"
+      ,un: "une $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
       ,quel: "quelle $"
     },{
       base: "marque employeur"
+      ,un: "une $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
@@ -189,15 +237,25 @@ var data = {
   suffix:[
     {
        base: "à l'ère du digital"
+    },{
+       base: "aujourd'hui"
     }
   ],
   isdigital:[
     {
       base: "santé digitale"
+      ,un: "une $"
       ,le: "la $"
       ,du: "de la $"
       ,au: "à la $"
       ,quel: "quelle $"
+    },{
+      base: "road mapping digital"
+      ,un: "un $"
+      ,le: "le $"
+      ,du: "du $"
+      ,au: "au $"
+      ,quel: "quel $"
     }
   ]
 }
